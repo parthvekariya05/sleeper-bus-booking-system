@@ -1,83 +1,79 @@
 # Sleeper Bus Ticket Booking System  
 Ahmedabad → Mumbai
 
----
 
 ## Project Overview
 
-This project is a web-based Sleeper Bus Ticket Booking System for the route Ahmedabad to Mumbai.  
-The system allows users to select sleeper seats, book meals during checkout, and confirm or cancel bookings.  
-The bus may have multiple intermediate stations between Ahmedabad and Mumbai, and only one bus is considered in the system.  
-Payment gateway integration is not included as part of this project.
+I have designed a web-based Sleeper Bus Ticket Booking System for the Ahmedabad to Mumbai route.  
+In this system, users can view available sleeper seats, select seats, book meals during the checkout process, and confirm or cancel their bookings.  
+The system assumes only one bus operating on this route, with the possibility of multiple intermediate stations between Ahmedabad and Mumbai.  
+Payment gateway integration is intentionally excluded, as the focus of this project is on system design, backend APIs, and analytical thinking.
 
----
 
 ## Core Features
 
-1. Sleeper seat selection and availability check  
-2. Booking seats for Ahmedabad to Mumbai route  
-3. Meal booking integration during checkout  
-4. Booking confirmation with unique booking ID  
-5. Booking cancellation functionality  
-6. Viewing booking history  
-7. Booking confirmation probability prediction (AI-based mock logic)
+1. I allow users to view sleeper seat availability in real time  
+2. Users can book sleeper seats for the Ahmedabad to Mumbai route  
+3. Meal booking (Veg / Non-Veg / No Meal) is integrated into the booking flow  
+4. Each successful booking generates a unique booking ID  
+5. Users can cancel an existing booking and release the seat  
+6. Booking history can be viewed for reference  
+7. A mock AI-based booking confirmation probability is generated
 
----
 
 ## Test Cases
 
 ### Functional Test Cases
-- User can view available sleeper seats  
-- User can book a seat successfully  
-- User can select a meal during booking  
-- User can cancel a booking  
+- I verify that users can view available sleeper seats  
+- I ensure users can successfully book a seat  
+- I check that meal selection works correctly during booking  
+- I confirm that bookings can be cancelled properly  
 
 ### Edge Cases
 - Booking the last available seat  
-- Booking without selecting a meal  
+- Booking without selecting any meal option  
 - Cancelling a booking that does not exist  
-- Selecting an invalid seat number  
+- Selecting an invalid or already booked seat  
 
 ### UI/UX Validation
-- Seat availability is clearly visible  
-- Meal options are easy to understand  
-- Proper error messages are shown  
+- Seat availability is clearly displayed to users  
+- Meal options are simple and easy to understand  
+- Appropriate error messages are shown for invalid actions  
 
----
 
 ## API Endpoints
 
 ### GET /api/seats  
-Returns the list of sleeper seats with their availability status.
+Returns the list of sleeper seats along with their availability status.
 
 ### POST /api/book-seat  
-Books a sleeper seat for the selected route.
+Allows users to book a sleeper seat for the selected route.
 
 ### POST /api/book-meal  
-Adds meal preference (Veg / Non-Veg / No Meal) to an existing booking.
+Adds the selected meal preference to an existing booking.
 
 ### POST /api/cancel-booking  
-Cancels a confirmed booking and frees the seat.
+Cancels a confirmed booking and makes the seat available again.
 
 ### GET /api/booking-history  
-Returns booking history details.
+Returns the booking history details.
 
 ### GET /api/stations  
-Returns intermediate stations between Ahmedabad and Mumbai.
+Returns the list of intermediate stations between Ahmedabad and Mumbai.
 
----
 
 ## UI/UX Prototype
 
 Figma Design Link:  
 (Will be added here – Public link)
 
----
+
 
 ## Prediction Approach
 
-This system includes a mock AI-based booking confirmation prediction feature.  
-The prediction logic, mock dataset, model approach, and final probability output are documented in the file:
+I have implemented a mock AI-based booking confirmation prediction feature.  
+This feature estimates the probability (in percentage) of booking confirmation based on historical and simulated data.  
+The detailed prediction logic, mock dataset, model approach, and final output are documented in:
 
 **PREDICTION_APPROACH.md**
 
@@ -86,16 +82,16 @@ The prediction logic, mock dataset, model approach, and final probability output
 ## Technology Stack
 
 - Backend: Python (Flask) / Node.js (Express)  
-- Database: In-memory / Mock data  
-- UI Design: Figma  
-- AI/ML: Mock rule-based or logistic regression approach  
+- Database: In-memory data structures (mock data)  
+- UI/UX Design: Figma  
+- AI/ML: Mock rule-based or simple logistic regression approach  
 
 ---
 
 ## Notes
 
-- Only one bus is considered in the system  
-- Payment gateway integration is not included  
-- This project focuses on system design, backend APIs, and analytical thinking  
+- The system considers only one bus for the entire route  
+- Payment gateway integration is not part of this project  
+- The main focus is on backend design, system flow, and analytical reasoning  
 
 ---
